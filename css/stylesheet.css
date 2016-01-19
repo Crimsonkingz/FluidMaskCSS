@@ -1,0 +1,85 @@
+#glass {
+	position: absolute;
+	height: 500px;
+	width: 500px;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	   -moz-transform: translate(-50%,-50%);
+	    -ms-transform: translate(-50%,-50%);
+	     -o-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+    background-color: #000;		
+    border-radius: 50%;
+}
+#spin {
+	position: absolute;
+	height: 700px;
+	width: 500px;
+	background: transparent;
+}
+.water {
+	position: absolute;
+	height: 500px;
+	width: 500px;
+	background-color: #40a4df;
+	/*border-radius: 50%;*/
+	/*background-image: url(../images/waterRipple.jpg);
+	background-size: cover;*/
+}
+
+@keyframes fillEffect {
+	0% {
+		-webkit-transform: translate(0%, 100%);
+		   -moz-transform: translate(0%, 100%);
+		    -ms-transform: translate(0%, 100%);
+		     -o-transform: translate(0%, 100%);
+		        transform: translate(0%, 100%);		      
+	}
+	100% {
+		-webkit-transform: translate(0,0);
+		   -moz-transform: translate(0,0);
+		    -ms-transform: translate(0,0);
+		     -o-transform: translate(0,0);
+		        transform: translate(0,0);
+        
+	}
+}@keyframes rippleEffect {
+	0% {
+		-webkit-transform: rotate(720deg);
+		   -moz-transform: rotate(720deg);
+		    -ms-transform: rotate(720deg);
+		     -o-transform: rotate(720deg);
+		        transform: rotate(720deg);
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+		    -ms-transform: rotate(0deg);
+		     -o-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+}
+
+
+.fill {
+	animation-name: fillEffect;
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier(.31,.58,.8,.54);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+.ripple {
+	animation-name: rippleEffect;
+    animation-duration: 2;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
